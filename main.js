@@ -2,6 +2,7 @@
 const tick = new Audio("sounds/tick.mp3");
 const tock = new Audio("sounds/tock.mp3");
 let count = 0;
+let counter = document.querySelector("#counter");
 
 // This function is called every 600ms
 function update() {
@@ -12,6 +13,8 @@ function update() {
   } else {
     tick.play();
   }
+  counter.innerText = count;
+  if (count >= 4) count = 0;
 }
 
 // This function sets up update() to be called every 600ms
